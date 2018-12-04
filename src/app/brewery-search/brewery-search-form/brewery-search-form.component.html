@@ -1,0 +1,39 @@
+<div class="container ml-2">
+  <div class="row ml-2">
+     <div class="col pb-4">
+       <h2 class="mt-4" id="billed-schedules-title">Brewery Search</h2>
+     </div>
+   </div>
+</div>
+<div class="row ml-1 col-11">
+  <div class="col pb-4">
+    <div class="pb-4">
+      <div class="col p-2 search">
+          <span class="fa fa-search"></span>
+        <input id="search-brewery" type="text" class="form-control" placeholder="Brewery Search" [(ngModel)]="brewerySearch">
+      </div>
+    </div>
+    
+    <table id="brewery-results-table" sortable-table (sorted)="onSorted($event)" class="table table-striped table-borderless">
+      <thead>
+        <tr id="brewery-results-table-headers">
+          
+          <th scope="col" sortable-column="name" id="header-brewery-name">Brewery Name</th>
+          <th scope="col" sortable-column="brewery_type" id="header-brewery-name">Brewery Type</th>
+          <th scope="col" sortable-column="street" id="header-brewery-name">Address</th>
+          <th scope="col" sortable-column="city" id="header-brewery-name">City</th>
+          <th scope="col" sortable-column="state" id="header-brewery-name">State</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr id="brewery-results-table-row-{{i}}" scope="row" *ngFor="let item of breweryList | tableFilter: brewerySearch: brewerySearchOptions; index as i">
+          <td><b>{{item.name}}</b></td>
+          <td><b>{{item.brewery_type}}</b></td>
+          <td><b>{{item.street}}</b></td>
+          <td><b>{{item.city}}</b></td>
+          <td><b>{{item.state}}</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
