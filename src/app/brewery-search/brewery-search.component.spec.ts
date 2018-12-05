@@ -1,40 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
-import { BrewerySearchComponent } from './brewery-search.component';
 import { BrewerySearchService } from './brewery-search-service/brewery-search.service';
-import {BrewerySearchFormComponent} from '../brewery-search/brewery-search-form/brewery-search-form.component';
-import {TableFilterPipe} from '../shared/tableFiler';
 
-describe('BrewerySearchComponent', () => {
-  let component: BrewerySearchComponent;
-  let fixture: ComponentFixture<BrewerySearchComponent>;
+
+describe('BrewerySearchSservice', () => {
+
   let service: BrewerySearchService;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, ReactiveFormsModule, FormsModule],
-      declarations: [ BrewerySearchComponent,
-         BrewerySearchFormComponent,
-        TableFilterPipe],
-         
-      providers: [BrewerySearchService, FormBuilder, TableFilterPipe]
-    
-    })
-    .compileComponents();
-  }));
+  let http: HttpClient;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BrewerySearchComponent);
-    component = fixture.componentInstance;
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [BrewerySearchService]
+    });
+
     service = TestBed.get(BrewerySearchService);
-    
-    fixture.detectChanges();
+    http = TestBed.get(HttpClient);
   });
 
-  fit('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 });

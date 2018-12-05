@@ -5,6 +5,7 @@ import {Breweries} from '../../models/Breweries';
 import {TableFilterPipe} from '../../shared/tableFiler';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormControl,FormGroup} from '@angular/forms';
+import { TextAst } from '@angular/compiler';
 
 
 @Component({
@@ -35,6 +36,11 @@ export class BrewerySearchFormComponent implements OnInit {
   private getBreweries(){
   this.brewerySearchService.getAll().subscribe(
   breweries => {
+    breweries.sort(function(a, b) {
+      var valA = a.name.toUpperCase();
+      var valB = b.name.toUpperCase();
+      return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;
+  });
     this.breweryList = breweries;
     this.breweryTempList= breweries;
       }
