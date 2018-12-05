@@ -29,8 +29,7 @@ export class BrewerySearchFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
-   this.getBreweries();
+     this.getBreweries();
   }
 
   private getBreweries(){

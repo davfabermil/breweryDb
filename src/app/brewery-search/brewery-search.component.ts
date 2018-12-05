@@ -16,7 +16,6 @@ breweries: Breweries[]=[];
   constructor( private brewerySearchService: BrewerySearchService) { }
 
   ngOnInit() {
-console.log('GetBreweriesMain');
     this.getBreweries();
   }
 
