@@ -11,7 +11,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 describe('BrewerySearchFormComponent', () => {
   let component: BrewerySearchFormComponent;
   let fixture: ComponentFixture<BrewerySearchFormComponent>;
-let service: BrewerySearchService;
+  let service: BrewerySearchService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -28,7 +28,7 @@ let service: BrewerySearchService;
     component = fixture.componentInstance;
     service = TestBed.get(BrewerySearchService);
     fixture.detectChanges();
-  component.ngOnInit();
+    component.ngOnInit();
   
   }));
 
