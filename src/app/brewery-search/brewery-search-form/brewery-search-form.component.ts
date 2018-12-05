@@ -41,7 +41,6 @@ export class BrewerySearchFormComponent implements OnInit {
       }
     );
   }
- 
 
 DoCheck(): void{
   if (this.brewerySearch ===''){
@@ -51,10 +50,5 @@ DoCheck(): void{
 
   selectSearchText(event){
     event.target.select();
-  }
-
-
-
-  
-
-}
+  } 
+} 

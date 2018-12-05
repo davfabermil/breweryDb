@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import {Breweries} from '../../models/Breweries';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable()
 
 export class BrewerySearchService {

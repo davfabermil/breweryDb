@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import  { BrewerySearchService } from './brewery-search-service/brewery-search.service';
+import { BrewerySearchService } from './brewery-search-service/brewery-search.service';
 import { Breweries } from '../models/Breweries';
-import {TableFilterPipe} from '../shared/tableFiler';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-brewery-search',
@@ -11,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class BrewerySearchComponent implements OnInit {
 breweries: Breweries[]=[];
-
 
   constructor( private brewerySearchService: BrewerySearchService) { }
 
