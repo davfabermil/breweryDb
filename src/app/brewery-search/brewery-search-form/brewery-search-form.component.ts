@@ -32,8 +32,8 @@ export class BrewerySearchFormComponent implements OnInit {
   this.brewerySearchService.getAll().subscribe(
   breweries => {
     breweries.sort(function(a, b) {
-      var valA = a.name.toUpperCase();
-      var valB = b.name.toUpperCase();
+      var valA = a.name.toLowerCase();
+      var valB = b.name.toLowerCase();
       return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;
   });
     this.breweryList = breweries;
